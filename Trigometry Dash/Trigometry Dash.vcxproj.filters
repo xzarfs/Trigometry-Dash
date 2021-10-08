@@ -21,7 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes.h">
-      <Filter>Resource Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
