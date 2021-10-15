@@ -2,9 +2,21 @@
 
 int main() {
 	sf::RenderWindow MainWindow(sf::VideoMode(800, 800, 32), "Trigometry Dash");
-	bool gameloop = true;
-	while (gameloop) {
-		std::cout << "8===D";
+	sf::CircleShape circle(50,500);
+
+	
+	sf::Event inputEvent;
+	uint64_t frameCount = 0;
+	while (MainWindow.isOpen()) {
+		MainWindow.clear();
+		while (MainWindow.pollEvent(inputEvent))
+		{
+			if (inputEvent.type == sf::Event::Closed)
+				MainWindow.close();
+		}
+		MainWindow.draw(circle);
+		MainWindow.display();
+		//frameCount++;
 	}
 	return 0;
 }
