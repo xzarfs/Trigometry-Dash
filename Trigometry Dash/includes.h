@@ -4,6 +4,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <chrono>
-#
+#include <Windows.h>
 #include <ctime>
 #include <SFML/Graphics/Color.hpp>
