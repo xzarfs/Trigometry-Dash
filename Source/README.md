@@ -1,1 +1,1 @@
-#The main godot project directory.
+# The main godot project directory.
