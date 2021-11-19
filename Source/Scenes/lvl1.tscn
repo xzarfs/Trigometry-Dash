@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="PhysicsMaterial" id=4]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512, 50 )
+
+[sub_resource type="OpenSimplexNoise" id=2]
+seed = 1
+octaves = 4
+period = 256.0
+persistence = 0.841
+lacunarity = 0.89
+
+[sub_resource type="NoiseTexture" id=3]
+width = 1500
+height = 100
+noise = SubResource( 2 )
+
+[node name="lvl1" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1500.0
+margin_bottom = 600.0
+color = Color( 0.596078, 0.756863, 0.85098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ground" type="Node2D" parent="."]
+position = Vector2( 0, 500 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ground"]
+collision_layer = 3
+collision_mask = 3
+physics_material_override = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/StaticBody2D"]
+position = Vector2( 512, 50 )
+shape = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="ground"]
+modulate = Color( 0.239216, 0.352941, 0.501961, 1 )
+margin_right = 1390.0
+margin_bottom = 100.0
+texture = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
